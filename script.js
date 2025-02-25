@@ -38,7 +38,7 @@ function openImage(img) {
 
     // יצירת כפתור שיתוף ממורכז
     const shareButton = document.createElement('div');
-    shareButton.innerHTML = '📤 שיתוף';
+    shareButton.innerHTML = '📤  שיתוף התמונה בוואצפ';
     shareButton.style.backgroundColor = '#4CAF50';
     shareButton.style.color = 'white';
     shareButton.style.padding = '15px 30px';
