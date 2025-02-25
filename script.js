@@ -1,4 +1,7 @@
 function openImage(img) {
+    // חסימת גלילת המסך
+    document.body.style.overflow = 'hidden';
+
     // יצירת אלמנט overlay עם התמונה
     const overlay = document.createElement('div');
     overlay.style.position = 'fixed';
@@ -32,6 +35,8 @@ function openImage(img) {
     closeButton.style.color = 'white';
     closeButton.style.cursor = 'pointer';
     closeButton.onclick = function() {
+        // שחרור חסימת גלילת המסך
+        document.body.style.overflow = 'auto';
         document.body.removeChild(overlay);
     };
     overlay.appendChild(closeButton);
