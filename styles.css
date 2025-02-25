@@ -14,17 +14,38 @@ body {
     background: linear-gradient(to right, #ffafbd, #ffc3a0);
     padding: 80px 20px;
     color: #fff;
+    box-sizing: border-box; /* מאפשר חישוב מדויק של רוחב/גובה */
+    width: 100%; /* וודא שהאלמנט תופס 100% רוחב */
+    margin: 0 auto; /* במידה וצריך למרכז את ה-container */
 }
 
+/* עיצוב כותרת ראשית - גודל גופן */
 .hero-content h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
 }
 
+/* עיצוב טקסט פסקה */
 .hero-content p {
     font-size: 1.2em;
     margin-bottom: 20px;
 }
+
+/* התאמה למובייל */
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 60px 15px; /* להקטין את הריווח הפנימי במובייל */
+    }
+
+    .hero-content h1 {
+        font-size: 2em; /* להקטין את גודל הפונט במובייל */
+    }
+
+    .hero-content p {
+        font-size: 1em; /* להקטין את גודל הפונט במובייל */
+    }
+}
+
 
 .btn {
     display: inline-block;
