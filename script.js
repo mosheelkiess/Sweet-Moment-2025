@@ -1,4 +1,3 @@
-
 function openImage(img) {
     // יצירת אלמנט overlay עם התמונה
     const overlay = document.createElement('div');
@@ -9,6 +8,7 @@ function openImage(img) {
     overlay.style.height = '100vh';
     overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
     overlay.style.display = 'flex';
+    overlay.style.flexDirection = 'column'; // מסדר את התמונה והכפתור אנכית
     overlay.style.justifyContent = 'center';
     overlay.style.alignItems = 'center';
     overlay.style.zIndex = '1000';
@@ -17,45 +17,51 @@ function openImage(img) {
     const image = document.createElement('img');
     image.src = img.src;
     image.style.maxWidth = '90%';
-    image.style.maxHeight = '90%';
+    image.style.maxHeight = '80%';
+    image.style.marginBottom = '20px'; // רווח בין התמונה לכפתור
     overlay.appendChild(image);
 
     // יצירת כפתור סגירה
-const closeButton = document.createElement('div');
-closeButton.innerHTML = '&times;';
+    const closeButton = document.createElement('div');
+    closeButton.innerHTML = '×';
+    closeButton.style.position = 'absolute';
+    closeButton.style.top = '10px';
+    closeButton.style.left = '50%';
+    closeButton.style.transform = 'translateX(-50%)';
+    closeButton.style.fontSize = '40px';
+    closeButton.style.color = 'white';
+    closeButton.style.cursor = 'pointer';
+    closeButton.onclick = function() {
+        document.body.removeChild(overlay);
+    };
+    overlay.appendChild(closeButton);
 
-// עיצוב הכפתור
-closeButton.style.position = 'absolute';
-closeButton.style.top = '10px'; // ממקם את הכפתור קרוב לחלק העליון של התמונה
-closeButton.style.left = '50%'; // ממקם את הכפתור במרכז רוחב התמונה
-closeButton.style.transform = 'translateX(-50%)'; // מכוון את הכפתור בדיוק במרכז הרוחב
-closeButton.style.fontSize = '40px';
-closeButton.style.color = 'white';
-closeButton.style.cursor = 'pointer';
-
-// התגובה כאשר לוחצים על הכפתור
-closeButton.onclick = function() {
-    document.body.removeChild(overlay);
-};
-
-// הוספת הכפתור לתמונה (או ל-overlay)
-overlay.appendChild(closeButton);
-
-    // יצירת כפתור שיתוף
+    // יצירת כפתור שיתוף ממורכז
     const shareButton = document.createElement('div');
-    shareButton.innerHTML = 'שיתוף';
-    shareButton.style.position = 'absolute';
-    shareButton.style.bottom = '20px';
-    shareButton.style.left = '20px';
-    shareButton.style.backgroundColor = 'white';
-    shareButton.style.padding = '10px';
-    shareButton.style.borderRadius = '5px';
+    shareButton.innerHTML = '📤 שיתוף';
+    shareButton.style.backgroundColor = '#4CAF50';
+    shareButton.style.color = 'white';
+    shareButton.style.padding = '15px 30px';
+    shareButton.style.borderRadius = '10px';
+    shareButton.style.fontSize = '18px';
     shareButton.style.cursor = 'pointer';
+    shareButton.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+    shareButton.style.transition = 'transform 0.3s';
+    shareButton.onmouseover = function() {
+        shareButton.style.transform = 'scale(1.1)';
+    };
+    shareButton.onmouseout = function() {
+        shareButton.style.transform = 'scale(1)';
+    };
     shareButton.onclick = function() {
-        navigator.share({
-            title: 'תמונה לשיתוף',
-            url: img.src
-        });
+        if (navigator.share) {
+            navigator.share({
+                title: 'תמונה לשיתוף',
+                url: img.src
+            }).catch(console.error);
+        } else {
+            alert('השיתוף לא נתמך בדפדפן שלך.');
+        }
     };
     overlay.appendChild(shareButton);
 
@@ -63,15 +69,11 @@ overlay.appendChild(closeButton);
     document.body.appendChild(overlay);
 }
 
-
-
-
-
 function googleTranslateElementInit() {
     new google.translate.TranslateElement(
         {
             pageLanguage: 'he',
-            includedLanguages: 'en', // אפשר להוסיף שפות נוספות עם פסיק, למשל: 'en,es,fr'
+            includedLanguages: 'en', // ניתן להוסיף עוד שפות עם פסיקים: 'en,fr,es'
             layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
             autoDisplay: false
         },
