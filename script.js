@@ -21,18 +21,25 @@ function openImage(img) {
     overlay.appendChild(image);
 
     // יצירת כפתור סגירה
-    const closeButton = document.createElement('div');
-    closeButton.innerHTML = '&times;';
-    closeButton.style.position = 'absolute';
-    closeButton.style.top = '20px';
-    closeButton.style.right = '20px';
-    closeButton.style.fontSize = '40px';
-    closeButton.style.color = 'white';
-    closeButton.style.cursor = 'pointer';
-    closeButton.onclick = function() {
-        document.body.removeChild(overlay);
-    };
-    overlay.appendChild(closeButton);
+const closeButton = document.createElement('div');
+closeButton.innerHTML = '&times;';
+
+// עיצוב הכפתור
+closeButton.style.position = 'absolute';
+closeButton.style.top = '10px'; // ממקם את הכפתור קרוב לחלק העליון של התמונה
+closeButton.style.left = '50%'; // ממקם את הכפתור במרכז רוחב התמונה
+closeButton.style.transform = 'translateX(-50%)'; // מכוון את הכפתור בדיוק במרכז הרוחב
+closeButton.style.fontSize = '40px';
+closeButton.style.color = 'white';
+closeButton.style.cursor = 'pointer';
+
+// התגובה כאשר לוחצים על הכפתור
+closeButton.onclick = function() {
+    document.body.removeChild(overlay);
+};
+
+// הוספת הכפתור לתמונה (או ל-overlay)
+overlay.appendChild(closeButton);
 
     // יצירת כפתור שיתוף
     const shareButton = document.createElement('div');
