@@ -319,6 +319,7 @@ footer {
     max-width: 800px; /* אפשר להגדיר כאן את הגודל המקסימלי שאתה רוצה */
     margin: 20px auto; /* ריווח ושיוך במרכז */
     text-align: center;
+    overflow: hidden;
 }
 
 video {
