@@ -7,7 +7,6 @@ body {
     background-color: #f8f8f8;
     color: #333;
 }
-
 /* עיצוב כותרת ראשית */
 .hero-content {
     text-align: center;
@@ -55,12 +54,15 @@ body {
     background-color: #ff6f61;
     text-decoration: none;
     border-radius: 8px;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
 .btn:hover {
     background-color: #e63946;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
+
 
 /* עיצוב חבילות */
 .packages {
@@ -368,6 +370,19 @@ body { top: 0 !important; }
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* מיכל חיצוני - יישור ומרכז */
 #contact-container {
     display: flex; /* יישור גמיש */
@@ -421,3 +436,75 @@ body { top: 0 !important; }
     }
 }
 
+
+
+
+
+.package-info p {
+    font-family: 'Frank Ruhl', serif; /* גופן עברי מסולסל ואלגנטי */
+    font-size: 1.2em; /* גודל גופן מעט יותר גדול */
+    font-weight: 600; /* הדגשת הטקסט */
+    color: #474241; /* צבע כהה יותר, אך לא שחור לחלוטין */
+    white-space: pre-line;
+}
+
+
+
+
+
+
+
+
+
+h3 {
+    font-family: 'Poppins', sans-serif; /* גופן מודרני ויפה */
+    font-size: 1.5em; /* גודל גופן יותר גדול */
+    font-weight: 600; /* הדגשת הטקסט */
+    color: #000000; /* צבע שחור מוחלט */
+    margin-bottom: 10px; /* מרווח מתחת לכותרת */
+    padding-bottom: 5px; /* מרווח בתוך הכותרת לפני הקו */
+    border-bottom: 2px solid #ff6f61; /* קו תחתון בצבע ורוד */
+    text-transform: uppercase; /* להפוך לאותיות רמות (אופציונלי) */
+}
+
+
+
+.price {
+    font-size: 1.5em; /* גודל גופן גדול יותר */
+    font-weight: 700; /* הדגשת הטקסט */
+    color: #2d2d2d; /* צבע כהה ואלגנטי */
+    font-family: 'Georgia', serif; /* גופן סריפי יוקרתי */
+    text-align: left; /* יישור הטקסט לשמאל */
+    padding: 10px; /* ריפוד סביב הטקסט */
+    border: 1px solid #000; /* קו דק שחור מסביב */
+    border-radius: 5px; /* קצוות מעוגלים מעט */
+    display: inline-block; /* הופך את האלמנט לשורה */
+}
+
+
+
+
+
+
+
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px; /* מיקום למטה בעמוד */
+    right: 20px; /* מיקום לימין */
+    background-color: #25d366; /* צבע של WhatsApp */
+    color: white;
+    border-radius: 50%; /* עיגול */
+    padding: 15px; /* גודל העיגול */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* הצללה עדינה */
+    font-size: 2em; /* גודל אייקון */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* מוודא שהאייקון יהיה מעל כל האלמנטים */
+    transition: transform 0.3s ease; /* אנימציה של הגלגול */
+}
+
+.whatsapp-float:hover {
+    transform: translateY(10px); /* כשהעכבר על האייקון הוא יזוז למטה */
+}
