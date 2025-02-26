@@ -362,3 +362,62 @@ body { top: 0 !important; }
     cursor: pointer;
     font-size: 16px;
 }
+
+
+
+
+
+
+/* מיכל חיצוני - יישור ומרכז */
+#contact-container {
+    display: flex; /* יישור גמיש */
+    justify-content: center; /* מרכז אופקי */
+    align-items: center; /* מרכז אנכי */
+    gap: 20px; /* ריווח בין הטקסט לכפתור */
+    margin: 40px 0; /* ריווח חיצוני */
+    direction: rtl; /* כיוון עברית */
+    flex-wrap: wrap; /* התאמה למסכים קטנים */
+}
+
+/* עיצוב הטקסט */
+#pone {
+    font-size: 22px; /* טקסט גדול יותר */
+    color: #2c2c2c; /* אפור כהה ואלגנטי */
+    margin: 0; /* מסיר שוליים */
+    font-weight: 600; /* טקסט מודגש */
+    font-family: "Segoe UI", Tahoma, sans-serif; /* גופן מודרני */
+    letter-spacing: 0.5px; /* ריווח בין אותיות */
+}
+
+/* עיצוב הכפתור */
+#call-link {
+    color: #fff; /* טקסט לבן */
+    background: linear-gradient(145deg, #1e1e1e, #444); /* מעבר צבע יוקרתי */
+    text-decoration: none; /* מסיר קו תחתון */
+    padding: 14px 32px; /* ריווח פנימי נוח */
+    border-radius: 40px; /* קצוות מעוגלים */
+    font-weight: 500; /* טקסט בינוני */
+    display: inline-block; /* תמיכה בריווח */
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* אנימציות חלקות */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* צל רך */
+    font-family: "Segoe UI", Tahoma, sans-serif; /* גופן תואם */
+}
+
+/* אפקט hover - הגדלה עדינה */
+#call-link:hover {
+    transform: translateY(-3px); /* הרמה עדינה */
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3); /* צל עמוק */
+    background: linear-gradient(145deg, #101010, #333); /* צבע כהה יותר */
+}
+
+/* התאמה למובייל */
+@media (max-width: 600px) {
+    #pone {
+        font-size: 18px; /* טקסט קטן יותר */
+    }
+
+    #call-link {
+        padding: 12px 28px; /* כפתור קטן יותר */
+    }
+}
+
