@@ -360,7 +360,8 @@
 
 
 
-<div class="package sold-out">
+
+    <div class="package sold-out">
     <img src="images/46.jpg" alt="Luxury Package">
 
     <div class="package-info">
@@ -374,14 +375,15 @@
             בקבוק יין קטן
         </p>
         <p class="price">₪235</p>
-        <a href="#" class="btn whatsapp-btn disabled">
+        <a href="#" class="btn whatsapp-btn disabled" style="pointer-events: none; border: 2px solid #d9534f; border-radius: 5px; padding: 10px 20px; text-decoration: none; color: #d9534f;">
             <i class="fab fa-whatsapp"></i> Sold Out
         </a>
     </div>
-    <div class="sold-out-banner">
-        <span>SOLD OUT</span>
+    <div class="sold-out-banner" onclick="event.preventDefault();">
+        <span> להמשך בירור והזמנה</span>
     </div>
 </div>
+
 
 
 
