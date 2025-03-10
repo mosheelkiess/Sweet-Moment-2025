@@ -522,30 +522,22 @@ h3 {
 
 /* עיצוב בסיסי של הקופסה */
 .package {
-    position: relative;
+    position: relative; /* מאפשר מיקום יחסי לילדים */
     overflow: hidden;
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease;
 }
 
-/* אפקט הגדלה במעבר עכבר (מושבת במובייל) */
-@media (hover: hover) {
-    .package:hover {
-        transform: scale(1.05);
-    }
+/* התמונה */
+.package img {
+    width: 100%;
+    display: block; /* מונע רווחים לא רצויים */
+    position: relative; /* כדי שה-z-index יעבוד */
+    z-index: 1; /* תמונה ברקע */
 }
 
-/* כפתור מנוטרל */
-.sold-out .btn.disabled {
-    pointer-events: none; /* מבטל לחיצה */
-    background: linear-gradient(145deg, #b0b0b0, #e0e0e0);
-    color: #666;
-    cursor: not-allowed;
-    border-radius: 10px;
-}
-
-/* באנר SOLD OUT אלכסוני */
+/* באנר SOLD OUT */
 .sold-out-banner {
     position: absolute;
     top: 50%;
@@ -555,7 +547,7 @@ h3 {
     background: linear-gradient(45deg, #ff4e50, #f9d423);
     text-align: center;
     padding: 15px 0;
-    z-index: 10;
+    z-index: 10; /* מוודא שהבאנר מעל התמונה */
     animation: slideIn 0.6s ease-in-out;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
@@ -579,22 +571,6 @@ h3 {
     }
 }
 
-/* התאמה למובייל */
-@media (max-width: 768px) {
-    .sold-out-banner {
-        left: -30%;
-        width: 160%;
-        padding: 10px 0;
-    }
-
-    .sold-out-banner span {
-        font-size: 1.5rem; /* טקסט קטן יותר */
-        letter-spacing: 2px;
-    }
-
-    .package {
-        border-radius: 10px; /* פינות מעוגלות פחות */
-    }
 
     .sold-out .btn.disabled {
         font-size: 1rem; /* גודל טקסט מתאים למובייל */
