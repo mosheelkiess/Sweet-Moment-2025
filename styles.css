@@ -561,3 +561,9 @@ h3 {
         transform: rotate(-25deg) translateY(-50%);
     }
 }
+
+
+/* מונע לחיצה על הבאנר */
+.sold-out-banner span {
+    pointer-events: none; /* מבטל כל אינטראקציה */
+}
