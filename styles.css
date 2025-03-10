@@ -508,3 +508,95 @@ h3 {
 .whatsapp-float:hover {
     transform: translateY(10px); /* כשהעכבר על האייקון הוא יזוז למטה */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/* עיצוב בסיסי של הקופסה */
+.package {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+/* אפקט הגדלה במעבר עכבר (מושבת במובייל) */
+@media (hover: hover) {
+    .package:hover {
+        transform: scale(1.05);
+    }
+}
+
+/* כפתור מנוטרל */
+.sold-out .btn.disabled {
+    pointer-events: none; /* מבטל לחיצה */
+    background: linear-gradient(145deg, #b0b0b0, #e0e0e0);
+    color: #666;
+    cursor: not-allowed;
+    border-radius: 10px;
+}
+
+/* באנר SOLD OUT אלכסוני */
+.sold-out-banner {
+    position: absolute;
+    top: 50%;
+    left: -40%;
+    width: 200%;
+    transform: rotate(-25deg) translateY(-50%);
+    background: linear-gradient(45deg, #ff4e50, #f9d423);
+    text-align: center;
+    padding: 15px 0;
+    z-index: 10;
+    animation: slideIn 0.6s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* טקסט על הבאנר */
+.sold-out-banner span {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+/* אנימציה להופעה חלקה */
+@keyframes slideIn {
+    from {
+        transform: rotate(-25deg) translateY(-150%);
+    }
+    to {
+        transform: rotate(-25deg) translateY(-50%);
+    }
+}
+
+/* התאמה למובייל */
+@media (max-width: 768px) {
+    .sold-out-banner {
+        left: -30%;
+        width: 160%;
+        padding: 10px 0;
+    }
+
+    .sold-out-banner span {
+        font-size: 1.5rem; /* טקסט קטן יותר */
+        letter-spacing: 2px;
+    }
+
+    .package {
+        border-radius: 10px; /* פינות מעוגלות פחות */
+    }
+
+    .sold-out .btn.disabled {
+        font-size: 1rem; /* גודל טקסט מתאים למובייל */
+    }
+}
